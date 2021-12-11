@@ -2,7 +2,7 @@
 header('Content-type: application/json;charset=utf-8');
 loadModel('Api');
 
-echo realpath(dirname(__FILE__) . '/../models');
+
 
 $param = "'1 = 1'";
 if (count($_GET) > 1) {

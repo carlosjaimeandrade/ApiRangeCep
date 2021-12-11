@@ -3,6 +3,7 @@
 require_once(dirname(__FILE__) . '/src/config/config.php');
 
 
+
 $uri = 
     parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -13,13 +14,10 @@ $uri = str_replace(".php", "", $uri);
 $uri = rtrim($uri, '/');
 
 
-
 if($uri === '/' || $uri === '' || $uri === '/index.php'){
-    header("location:". "/api_range/api/" );
+    //echo "<script>window.location.replace('https://documenter.getpostman.com/view/18645491/UVJhCu3Q')</script>";
 }
 
 if(file_exists(CONTROLLER_PATH . "/{$uri}.php")){
     require_once(CONTROLLER_PATH . "/{$uri}.php");
-}else{
-    header("location:". "/api_range/api/" );
 }
